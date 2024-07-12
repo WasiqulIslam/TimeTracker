@@ -10,7 +10,8 @@ click Reset to reset the time.
 Email: islam.wasiqul@gmail.com
 Last updated: 12/07/2024
 
-Download the executable zip files to use.
-To need to install .net 8 runtime to use this App.
+Download the TimeTracker zip files to use for you PC or MAC and matching with your operating system.
+You may need to install .net 8 runtime to use this App.
 https://dotnet.microsoft.com/en-us/download/dotnet/8.0
+
 
