@@ -1,0 +1,17 @@
+D:\Workspace\TimeTracker\TimeTracker\bin\Debug\net8.0-windows\TimeTracker.exe
+D:\Workspace\TimeTracker\TimeTracker\bin\Debug\net8.0-windows\TimeTracker.deps.json
+D:\Workspace\TimeTracker\TimeTracker\bin\Debug\net8.0-windows\TimeTracker.runtimeconfig.json
+D:\Workspace\TimeTracker\TimeTracker\bin\Debug\net8.0-windows\TimeTracker.dll
+D:\Workspace\TimeTracker\TimeTracker\bin\Debug\net8.0-windows\TimeTracker.pdb
+D:\Workspace\TimeTracker\TimeTracker\obj\Debug\net8.0-windows\TimeTracker.MainUI.resources
+D:\Workspace\TimeTracker\TimeTracker\obj\Debug\net8.0-windows\TimeTracker.csproj.GenerateResource.cache
+D:\Workspace\TimeTracker\TimeTracker\obj\Debug\net8.0-windows\TimeTracker.GeneratedMSBuildEditorConfig.editorconfig
+D:\Workspace\TimeTracker\TimeTracker\obj\Debug\net8.0-windows\TimeTracker.AssemblyInfoInputs.cache
+D:\Workspace\TimeTracker\TimeTracker\obj\Debug\net8.0-windows\TimeTracker.AssemblyInfo.cs
+D:\Workspace\TimeTracker\TimeTracker\obj\Debug\net8.0-windows\TimeTracker.csproj.CoreCompileInputs.cache
+D:\Workspace\TimeTracker\TimeTracker\obj\Debug\net8.0-windows\TimeTracker.sourcelink.json
+D:\Workspace\TimeTracker\TimeTracker\obj\Debug\net8.0-windows\TimeTracker.dll
+D:\Workspace\TimeTracker\TimeTracker\obj\Debug\net8.0-windows\refint\TimeTracker.dll
+D:\Workspace\TimeTracker\TimeTracker\obj\Debug\net8.0-windows\TimeTracker.pdb
+D:\Workspace\TimeTracker\TimeTracker\obj\Debug\net8.0-windows\TimeTracker.genruntimeconfig.cache
+D:\Workspace\TimeTracker\TimeTracker\obj\Debug\net8.0-windows\ref\TimeTracker.dll

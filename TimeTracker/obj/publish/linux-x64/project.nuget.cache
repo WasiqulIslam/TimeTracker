@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "/hhvuNfbkGBSA7bj94zxFI6r3sTz3YNtBZTL6WZes9T3o/kKM3sne+rpke7Or5nFlIQ/h7EgVZ0E7QeOzKTRbw==",
+  "success": true,
+  "projectFilePath": "D:\\Workspace\\TimeTracker\\TimeTracker\\TimeTracker.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\islam\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.2\\microsoft.net.illink.tasks.8.0.2.nupkg.sha512",
+    "C:\\Users\\islam\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\8.0.2\\microsoft.netcore.app.host.linux-x64.8.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

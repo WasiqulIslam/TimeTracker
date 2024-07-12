@@ -1,0 +1,2 @@
+D:\Workspace\TimeTracker\TimeTracker\bin\Release\net8.0-windows\publish\win-x64\TimeTracker.pdb
+D:\Workspace\TimeTracker\TimeTracker\bin\Release\net8.0-windows\publish\win-x64\TimeTracker.exe
