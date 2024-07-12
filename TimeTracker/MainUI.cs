@@ -80,7 +80,7 @@ namespace TimeTracker
                     TimeSpan span = endTime - times[i];
                     total += span;
                 }
-                string summary = $"{total:hh}:{total:mm}";
+                string summary = $"{(int)Math.Floor(total.TotalHours)}:{total:mm}";
 
                 //time details
                 string details = "";
