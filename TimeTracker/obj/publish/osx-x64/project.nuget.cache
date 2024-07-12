@@ -1,12 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "AYhGTSGTHMKDdMmie0MJ42lDAjmWTMx5jNiH+9dNKXIKUIPKe7e661iiK6tCBHZP+UFHHrI8yFzbTWfRM4at8A==",
+  "dgSpecHash": "wadUo0DTIeDkXbThTfBAEiDZW2gmlMdqkWwoHTyprVbXt2Ppqg7b6b2Wc/A1IIDl/os7IRXF3K9hW9UsYkI35w==",
   "success": true,
   "projectFilePath": "D:\\Workspace\\TimeTracker\\TimeTracker\\TimeTracker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\islam\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.2\\microsoft.net.illink.tasks.8.0.2.nupkg.sha512",
-    "C:\\Users\\islam\\.nuget\\packages\\microsoft.netcore.app.runtime.osx-x64\\8.0.2\\microsoft.netcore.app.runtime.osx-x64.8.0.2.nupkg.sha512",
-    "C:\\Users\\islam\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.osx-x64\\8.0.2\\microsoft.aspnetcore.app.runtime.osx-x64.8.0.2.nupkg.sha512",
     "C:\\Users\\islam\\.nuget\\packages\\microsoft.netcore.app.host.osx-x64\\8.0.2\\microsoft.netcore.app.host.osx-x64.8.0.2.nupkg.sha512"
   ],
   "logs": []

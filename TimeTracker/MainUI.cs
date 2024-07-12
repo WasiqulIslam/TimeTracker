@@ -68,17 +68,8 @@ namespace TimeTracker
 
                 List<DateTime> times = ReadTime();
 
+                //calculate total time
                 TimeSpan total = new TimeSpan();
-                if (times.Count % 2 == 0)
-                {
-                    btnStart.Enabled = true;
-                    btnStop.Enabled = false;
-                }
-                else
-                {
-                    btnStart.Enabled = false;
-                    btnStop.Enabled = true;
-                }
                 for (int i = 0; i < times.Count; i += 2)
                 {
                     DateTime endTime = DateTime.Now;
@@ -91,13 +82,25 @@ namespace TimeTracker
                 }
                 string summary = $"{total:hh}:{total:mm}";
 
+                //time details
                 string details = "";
                 foreach (DateTime time in times)
                 {
                     details += time.ToString() + Environment.NewLine;
                 }
 
+                //update UI
                 this.Invoke((MethodInvoker)delegate {
+                    if (times.Count % 2 == 0)
+                    {
+                        btnStart.Enabled = true;
+                        btnStop.Enabled = false;
+                    }
+                    else
+                    {
+                        btnStart.Enabled = false;
+                        btnStop.Enabled = true;
+                    }
                     lblSummary.Text = summary;
                     txtDetails.Text = details;
                 });
