@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainUI));
             btnStart = new Button();
             btnStop = new Button();
             txtDetails = new TextBox();
@@ -59,6 +60,7 @@
             // 
             // txtDetails
             // 
+            txtDetails.BackColor = Color.FromArgb(170, 209, 255);
             txtDetails.Location = new Point(40, 176);
             txtDetails.Multiline = true;
             txtDetails.Name = "txtDetails";
@@ -69,9 +71,10 @@
             // lblSummary
             // 
             lblSummary.AutoSize = true;
+            lblSummary.Font = new Font("Arial Narrow", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSummary.Location = new Point(45, 32);
             lblSummary.Name = "lblSummary";
-            lblSummary.Size = new Size(62, 20);
+            lblSummary.Size = new Size(66, 20);
             lblSummary.TabIndex = 3;
             lblSummary.Text = "Summary";
             // 
@@ -109,6 +112,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(170, 209, 255);
             ClientSize = new Size(453, 567);
             Controls.Add(lblQuery);
             Controls.Add(btnOpenFolder);
@@ -119,6 +123,8 @@
             Controls.Add(btnStart);
             Font = new Font("Arial Narrow", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "MainUI";
             Text = "Time Tracker";
             FormClosed += MainUI_FormClosed;

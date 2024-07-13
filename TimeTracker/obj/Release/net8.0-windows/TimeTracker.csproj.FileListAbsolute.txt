@@ -4,6 +4,7 @@ D:\Workspace\TimeTracker\TimeTracker\bin\Release\net8.0-windows\TimeTracker.runt
 D:\Workspace\TimeTracker\TimeTracker\bin\Release\net8.0-windows\TimeTracker.dll
 D:\Workspace\TimeTracker\TimeTracker\bin\Release\net8.0-windows\TimeTracker.pdb
 D:\Workspace\TimeTracker\TimeTracker\obj\Release\net8.0-windows\TimeTracker.MainUI.resources
+D:\Workspace\TimeTracker\TimeTracker\obj\Release\net8.0-windows\TimeTracker.Properties.Resources.resources
 D:\Workspace\TimeTracker\TimeTracker\obj\Release\net8.0-windows\TimeTracker.csproj.GenerateResource.cache
 D:\Workspace\TimeTracker\TimeTracker\obj\Release\net8.0-windows\TimeTracker.GeneratedMSBuildEditorConfig.editorconfig
 D:\Workspace\TimeTracker\TimeTracker\obj\Release\net8.0-windows\TimeTracker.AssemblyInfoInputs.cache

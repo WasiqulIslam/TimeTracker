@@ -15,3 +15,4 @@ D:\Workspace\TimeTracker\TimeTracker\obj\Release\net8.0-windows\win-x64\refint\T
 D:\Workspace\TimeTracker\TimeTracker\obj\Release\net8.0-windows\win-x64\TimeTracker.pdb
 D:\Workspace\TimeTracker\TimeTracker\obj\Release\net8.0-windows\win-x64\TimeTracker.genruntimeconfig.cache
 D:\Workspace\TimeTracker\TimeTracker\obj\Release\net8.0-windows\win-x64\ref\TimeTracker.dll
+D:\Workspace\TimeTracker\TimeTracker\obj\Release\net8.0-windows\win-x64\TimeTracker.Properties.Resources.resources
