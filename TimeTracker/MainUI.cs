@@ -214,9 +214,11 @@ namespace TimeTracker
             MessageBox.Show(@"Click Start to start tracking time, 
 click Stop to stop tracking time, 
 click Reset to reset the time.
+To download latest version of this App please visit:
+https://github.com/WasiqulIslam/TimeTracker
 - Developed by Wasiqul Islam
 Email: islam.wasiqul@gmail.com
-Last updated: 12/07/2024",
+Last updated: 17/07/2024",
                 "Time Tracker",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
