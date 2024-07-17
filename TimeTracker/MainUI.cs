@@ -37,160 +37,175 @@ namespace TimeTracker
 
         private void MainUI_Load(object sender, EventArgs e)
         {
-            lblSummary.Text = "";
-            CalculateTime();
-            var task = new Task(UpdateTime);
-            task.Start();
+            try
+            {
+                lblSummary.Text = "";
+                CalculateTime();
+                var task = new Task(UpdateTime);
+                task.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error has occured: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        public void UpdateTime()
+        private void UpdateTime()
         {
+
             while (true)
             {
+
                 if (shouldClose)
                 {
                     break;
                 }
-                CalculateTime();
+
+                try
+                {
+                    CalculateTime();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error has occured: " + ex.Message, 
+                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
                 Thread.Sleep(1000 * 60);
                 if (shouldClose)
                 {
                     break;
                 }
+
             }
+
         }
 
         private void CalculateTime()
         {
 
-            try
+            List<DateTime> times = ReadTime();
+
+            //calculate total time
+            TimeSpan total = new TimeSpan();
+            for (int i = 0; i < times.Count; i += 2)
             {
-
-                List<DateTime> times = ReadTime();
-
-                //calculate total time
-                TimeSpan total = new TimeSpan();
-                for (int i = 0; i < times.Count; i += 2)
+                DateTime endTime = DateTime.Now;
+                if (i + 1 < times.Count)
                 {
-                    DateTime endTime = DateTime.Now;
-                    if (i + 1 < times.Count)
-                    {
-                        endTime = times[i + 1];
-                    }
-                    TimeSpan span = endTime - times[i];
-                    total += span;
+                    endTime = times[i + 1];
                 }
-                string summary = $"{(int)Math.Floor(total.TotalHours)}:{total:mm}";
-
-                //time details
-                string details = "";
-                foreach (DateTime time in times)
-                {
-                    details += time.ToString() + Environment.NewLine;
-                }
-
-                //update UI
-                this.Invoke((MethodInvoker)delegate {
-                    if (times.Count % 2 == 0)
-                    {
-                        btnStart.Enabled = true;
-                        btnStop.Enabled = false;
-                    }
-                    else
-                    {
-                        btnStart.Enabled = false;
-                        btnStop.Enabled = true;
-                    }
-                    lblSummary.Text = summary;
-                    txtDetails.Text = details;
-                });
-
+                TimeSpan span = endTime - times[i];
+                total += span;
             }
-            catch (Exception ex)
+            string summary = $"{(int)Math.Floor(total.TotalHours)}:{total:mm}";
+
+            //time details
+            string details = "";
+            foreach (DateTime time in times)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                details += time.ToString() + Environment.NewLine;
             }
+
+            //update UI
+            this.Invoke((MethodInvoker)delegate {
+                if (times.Count % 2 == 0)
+                {
+                    btnStart.Enabled = true;
+                    btnStop.Enabled = false;
+                }
+                else
+                {
+                    btnStart.Enabled = false;
+                    btnStop.Enabled = true;
+                }
+                lblSummary.Text = summary;
+                txtDetails.Text = details;
+            });
 
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            WriteTime();
-            CalculateTime();
-        }
-
-        public void WriteTime()
-        {
             try
             {
-                using (StreamWriter sw = new StreamWriter(FilePath, true))
-                {
-                    sw.WriteLine(DateTime.Now.ToString());
-                }
+                WriteTime();
+                CalculateTime();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("An error has occured: " + ex.Message, 
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        public void ClearTime()
+        private void WriteTime()
         {
-            try
+            using (StreamWriter sw = new StreamWriter(FilePath, true))
             {
-                if (File.Exists(FilePath))
-                {
-                    File.Delete(FilePath);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                sw.WriteLine(DateTime.Now.ToString());
             }
         }
 
-        public List<DateTime> ReadTime()
+        private void ClearTime()
+        {
+            if (File.Exists(FilePath))
+            {
+                File.Delete(FilePath);
+            }
+        }
+
+        private List<DateTime> ReadTime()
         {
             List<DateTime> times = new List<DateTime>();
-            try
+            if (File.Exists(FilePath))
             {
-                if (File.Exists(FilePath))
+                using (StreamReader sr = new StreamReader(FilePath))
                 {
-                    using (StreamReader sr = new StreamReader(FilePath))
+                    string? line;
+                    while ((line = sr.ReadLine()) != null)
                     {
-                        string? line;
-                        while ((line = sr.ReadLine()) != null)
+                        if (DateTime.TryParse(line, out DateTime time))
                         {
-                            if (DateTime.TryParse(line, out DateTime time))
-                            {
-                                times.Add(time);
-                            }
+                            times.Add(time);
                         }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return times;
         }
 
         private void btnStop_Click(object sender, EventArgs e)
         {
-            WriteTime();
-            CalculateTime();
+            try
+            {
+                WriteTime();
+                CalculateTime();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error has occured: " + ex.Message, 
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            DialogResult result =
-                MessageBox.Show("Are you sure you want to reset the time?",
-                "Reset Time", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            try
             {
-                ClearTime();
-                CalculateTime();
+                DialogResult result =
+                    MessageBox.Show("Are you sure you want to reset the time?",
+                    "Reset Time", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    ClearTime();
+                    CalculateTime();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error has occured: " + ex.Message, 
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -211,10 +226,9 @@ Last updated: 12/07/2024",
             string? directory = Path.GetDirectoryName(FilePath);
             try
             {
-                if (directory != null && Directory.Exists(directory))
-                {
-                    System.Diagnostics.Process.Start("explorer.exe", directory);
-                }
+                //For systems those are not Windows operating system this command may not work.
+                //In that case user will be able to see the folder name from the error message.
+                System.Diagnostics.Process.Start("explorer.exe", directory); //ignoring nullability warning as exception is handled already
             }
             catch (Exception ex)
             {
