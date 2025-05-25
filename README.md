@@ -1,6 +1,8 @@
-Time Tracker
+# Time Tracker
 
 This app is used to track your office/work time.
+
+![image](https://github.com/user-attachments/assets/058373a0-e30e-44ad-a0b0-da97fc87c193)
 
 Click Start to start tracking time, 
 click Stop to stop tracking time, 
