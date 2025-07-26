@@ -1,6 +1,7 @@
 # Time Tracker
 
 This app is used to track your office/work time.
+You can easily copy the time records and paste in another place.
 
 ![image](https://github.com/user-attachments/assets/058373a0-e30e-44ad-a0b0-da97fc87c193)
 
