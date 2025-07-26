@@ -2,6 +2,7 @@
 
 This app is used to track your office/work time.
 You can easily copy the time records and paste in another place.
+Even if you restart your computer records will not be lost in general.
 
 ![image](https://github.com/user-attachments/assets/058373a0-e30e-44ad-a0b0-da97fc87c193)
 
